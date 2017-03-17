@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         new MyThread(()->{
-            MyThread t =(MyThread)Thread.currentThread();
+            MyThread t = (MyThread) Thread.currentThread();
             putAndGetId(t,"group1");
             for (int i = 0; i < 10; i++) {
                 new MyThread(()->{

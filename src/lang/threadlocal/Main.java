@@ -7,16 +7,15 @@ public class Main {
         int i = ThreadId.get(false);
         System.out.println(i);
 
-        new Thread(() ->{
-                int j = ThreadId.get(false);
-                System.out.println(j);
-        }).start();
-
-        new Thread(()->{
-            int j = ThreadId.get(true);
+        new Thread(() -> {
+            int j = ThreadId.get(false);
             System.out.println(j);
         }).start();
 
+        new Thread(() -> {
+            int j = ThreadId.get(true);
+            System.out.println(j);
+        }).start();
 
 
         //System.gc();

@@ -12,7 +12,7 @@ public class MyThread extends Thread {
      * 1. 存储多个不同的键值对，第一反应便是Map
      * 2. 并不是每个线程都一定会有threadlocalMap，没有必要在声明时就初始化。
      * 3. Map的key指定为String类型，value指定为Object类型。这明显不是一个好实现
-     *
+     * <p>
      * from version 2.0
      * 为了配合MyThreadlocalodl类的泛型，将Map的key改为Object类型
      */
@@ -21,13 +21,13 @@ public class MyThread extends Thread {
     /**
      * 1. 确保获取到的threadlocalMap是当前线程的threadlocalMap
      * 2. 第一次获取threadlocalMap时对其初始化
-     *
+     * <p>
      * from version 2.0
      * 3. 将方法设为包级私有
      *
      * @return
      */
-     Map<Object, Object> getThreadlocalMap() {
+    Map<Object, Object> getThreadlocalMap() {
 
         /*
          *from version 2.0

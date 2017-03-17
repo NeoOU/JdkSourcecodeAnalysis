@@ -48,19 +48,19 @@ public class Main {
             System.out.println("-------------------------------------------");
             String newKey = UUID.randomUUID().toString();
             Integer newValue = 1024;
-            idStorage.set(newKey,newValue);
+            idStorage.set(newKey, newValue);
             Integer integer = idStorage.get(newKey);
-            System.out.println("threadName:"+Thread.currentThread().getName()+" newValue:"+integer);
+            System.out.println("threadName:" + Thread.currentThread().getName() + " newValue:" + integer);
             get(idStorage);
         }).start();
     }
 
-    private static void set(MyThreadlocal<String, Integer> idStorage){
+    private static void set(MyThreadlocal<String, Integer> idStorage) {
         idStorage.set(threadId, nextId.getAndIncrement());
     }
 
-    private static void get(MyThreadlocal<String, Integer> idStorage){
+    private static void get(MyThreadlocal<String, Integer> idStorage) {
         Integer id = idStorage.get(threadId);
-        System.out.println("threadName:"+Thread.currentThread().getName()+" threadId:"+id);
+        System.out.println("threadName:" + Thread.currentThread().getName() + " threadId:" + id);
     }
 }

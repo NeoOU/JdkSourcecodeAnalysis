@@ -8,13 +8,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadId {
     private static final AtomicInteger nextId = new AtomicInteger(0);
 
-    public static ThreadLocal<Integer> threadId =ThreadLocal.withInitial(()->nextId.getAndIncrement());
+    private static ThreadLocal<Integer> threadId = ThreadLocal.withInitial(() -> nextId.getAndIncrement());
 
 
     public static int get(boolean b) {
         Integer integer = threadId.get();
-        if(b){
-            threadId=ThreadLocal.withInitial(()->nextId.getAndIncrement());
+        if (b) {
+            threadId = ThreadLocal.withInitial(() -> nextId.getAndIncrement());
             System.gc();
         }
         return integer;
