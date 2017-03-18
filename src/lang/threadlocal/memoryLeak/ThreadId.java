@@ -1,4 +1,4 @@
-package lang.threadlocal;
+package lang.threadlocal.memoryLeak;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
