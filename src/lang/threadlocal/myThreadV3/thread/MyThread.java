@@ -1,4 +1,4 @@
-package lang.threadlocal.myThreadV1;
+package lang.threadlocal.myThreadV3.thread;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,19 +12,33 @@ public class MyThread extends Thread {
      * 1. 线程可以有多个本地变量，一个本地变量对应一个值（对象），第一反应便是Map
      * 2. 并不是每个线程都一定会有threadlocalMap，没有必要在声明时就初始化。
      * 3. Map的key指定为String类型，value指定为Object类型。key即为本地变量，value即为本地变量对应的值
+     * <p>
+     * since version 2.0
+     * 为了配合MyThreadlocalodl类的泛型，将Map的key改为Object类型
+     *
+     * since version 3.0
+     * 将Map的key改为MyThreadlocal类型
      */
-    private Map<String, Object> threadlocalMap;
+    private Map<MyThreadlocal, Object> threadlocalMap;
 
     /**
      * 1. 确保获取到的threadlocalMap是当前线程的threadlocalMap
      * 2. 第一次获取threadlocalMap时对其初始化
+     * <p>
+     * from version 2.0
+     * 3. 将方法设为包级私有
      *
      * @return
      */
-    public Map<String, Object> getThreadlocalMap() {
+    Map<MyThreadlocal, Object> getThreadlocalMap() {
+
+        /*
+         *from version 2.0
+         *已经在MyThreadlocal类中确保是通过Thread.currentThread()获取threadlocalMap
+         *
         //确保获取到的threadlocalMap是当前线程的threadlocalMap
         MyThread curThread = (MyThread) currentThread();
-        Map<String, Object> curThreadlocalMap = curThread.threadlocalMap;
+        Map<String, Object> curThreadlocalMap = curThread.threadlocalMap;*/
 
         /*
          * 不论在哪个线程调用getThreadlocalMap()方法，都会通过上面的代码获取到当前正在执行的线程，
@@ -37,11 +51,11 @@ public class MyThread extends Thread {
                 }
             }
         }*/
-        if (curThreadlocalMap == null) {
-            curThreadlocalMap = new HashMap<>();
+        if (threadlocalMap == null) {
+            threadlocalMap = new HashMap<>();
         }
 
-        return curThreadlocalMap;
+        return threadlocalMap;
     }
 
     public MyThread(Runnable runnable) {

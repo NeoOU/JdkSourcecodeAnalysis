@@ -5,6 +5,7 @@ import java.util.Map;
 /**
  * Created by omed on 2017/3/12.
  * 封装getThreadlocalMap()访问的工具类
+ * since 2.0
  */
 public class MyThreadlocal<S, T> {
 
