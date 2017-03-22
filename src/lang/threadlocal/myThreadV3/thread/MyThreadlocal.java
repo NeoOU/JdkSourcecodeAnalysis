@@ -22,7 +22,7 @@ public class MyThreadlocal<T> {
      *
      * @return
      */
-    private Map<MyThreadlocal, T> getThreadlocalMap() {
-        return (Map<MyThreadlocal, T>) ((MyThread) Thread.currentThread()).getThreadlocalMap();
+    private Map<MyThreadlocal<?>, T> getThreadlocalMap() {
+        return (Map<MyThreadlocal<?>, T>) ((MyThread) Thread.currentThread()).getThreadlocalMap();
     }
 }

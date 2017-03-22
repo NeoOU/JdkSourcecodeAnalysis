@@ -19,7 +19,7 @@ public class MyThread extends Thread {
      * since version 3.0
      * 将Map的key改为MyThreadlocal类型
      */
-    private Map<MyThreadlocal, Object> threadlocalMap;
+    private Map<MyThreadlocal<?>, Object> threadlocalMap;
 
     /**
      * 1. 确保获取到的threadlocalMap是当前线程的threadlocalMap
@@ -30,7 +30,7 @@ public class MyThread extends Thread {
      *
      * @return
      */
-    Map<MyThreadlocal, Object> getThreadlocalMap() {
+    Map<MyThreadlocal<?>, Object> getThreadlocalMap() {
 
         /*
          *from version 2.0
