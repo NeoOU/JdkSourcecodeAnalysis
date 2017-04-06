@@ -19,35 +19,15 @@
       <point x="257.125" y="60.0" />
       <point x="9.375" y="15.0" />
     </edge>
+    <edge source="java.util.NavigableMap" target="java.util.SortedMap">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
     <edge source="java.util.HashMap" target="java.util.AbstractMap">
       <point x="-26.0" y="-15.0" />
       <point x="231.75" y="135.0" />
       <point x="236.25" y="135.0" />
       <point x="30.75" y="15.0" />
-    </edge>
-    <edge source="java.util.SortedMap" target="java.util.Map">
-      <point x="0.0" y="-15.0" />
-      <point x="67.0" y="50.0" />
-      <point x="219.625" y="50.0" />
-      <point x="-28.125" y="15.0" />
-    </edge>
-    <edge source="java.util.TreeMap" target="java.util.AbstractMap">
-      <point x="25.25" y="-15.0" />
-      <point x="150.76136363636365" y="215.0" />
-      <point x="174.75" y="215.0" />
-      <point x="-30.75" y="15.0" />
-    </edge>
-    <edge source="java.util.LinkedHashMap" target="java.util.Map">
-      <point x="35.5" y="-15.0" />
-      <point x="324.5" y="215.0" />
-      <point x="320.25" y="215.0" />
-      <point x="320.25" y="50.0" />
-      <point x="275.875" y="50.0" />
-      <point x="28.125" y="15.0" />
-    </edge>
-    <edge source="java.util.NavigableMap" target="java.util.SortedMap">
-      <point x="0.0" y="-15.0" />
-      <point x="0.0" y="15.0" />
     </edge>
     <edge source="java.util.AbstractMap" target="java.util.Map">
       <point x="0.0" y="-15.0" />
@@ -66,6 +46,26 @@
       <point x="100.26136363636365" y="215.0" />
       <point x="67.0" y="215.0" />
       <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.SortedMap" target="java.util.Map">
+      <point x="0.0" y="-15.0" />
+      <point x="67.0" y="50.0" />
+      <point x="219.625" y="50.0" />
+      <point x="-28.125" y="15.0" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.Map">
+      <point x="35.5" y="-15.0" />
+      <point x="324.5" y="215.0" />
+      <point x="320.25" y="215.0" />
+      <point x="320.25" y="50.0" />
+      <point x="275.875" y="50.0" />
+      <point x="28.125" y="15.0" />
+    </edge>
+    <edge source="java.util.TreeMap" target="java.util.AbstractMap">
+      <point x="25.25" y="-15.0" />
+      <point x="150.76136363636365" y="215.0" />
+      <point x="174.75" y="215.0" />
+      <point x="-30.75" y="15.0" />
     </edge>
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="180.0" y="135.0" />
